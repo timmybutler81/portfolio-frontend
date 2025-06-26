@@ -1,0 +1,6 @@
+<div class="overlay" *ngIf="markdown">
+  <div class="modal">
+    <button class="close" (click)="markdown = null">✕</button>
+    <div class="content" [innerHTML]="html"></div>
+  </div>
+</div>

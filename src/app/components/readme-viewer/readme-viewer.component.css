@@ -1,0 +1,13 @@
+.overlay {
+  position: fixed; inset: 0;
+  backdrop-filter: blur(4px);
+  display: flex; justify-content: center; align-items: center;
+}
+.modal {
+  background: #1e1e1e; color: #eee;
+  max-height: 90vh; overflow: auto;
+  width: 90%; max-width: 800px;
+  padding: 1.5rem; border-radius: 8px;
+}
+.close { float:right; background:none; border:none; color:#fff; font-size:1.2rem; }
+.content h1,h2,h3 { color:#90caf9; }

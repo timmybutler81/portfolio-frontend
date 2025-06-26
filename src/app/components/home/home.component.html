@@ -1,0 +1,41 @@
+<!--BANNER / HERO-->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="intro-text">
+      <h1>Timothy Butler</h1>
+      <h2>Full-Stack Developer</h2>
+      <p>
+        Passionate about clean code, powerful APIs, and building intuitive apps. 
+        Check out my projects or get in touch!
+      </p>
+    </div>
+    <div class="profile-pic">
+      <img src="assets/profile.png" alt="Profile Photo" />
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT GRID -->
+<section class="projects">
+  <h2 class="section-title" id="projects">Projects</h2>
+
+  <div class="grid">
+    <div *ngFor="let p of projects" class="card">
+      <h3>{{ p.projectTitle }}</h3>
+      <p>{{ p.projectDescription }}</p>
+
+      <div class="tags">
+        <span *ngFor="let tag of p.tags">{{ tag }}</span>
+      </div>
+
+      <div class="links">
+        <a [href]="p.githubLink" target="_blank">GitHub</a>
+        <a *ngIf="p.liveDemoLink" [href]="p.liveDemoLink" target="_blank">Live Demo</a>
+        <button (click)="showReadme(p.id)">README</button>
+      </div>
+    </div>
+  </div>
+  <app-readme-viewer [markdown]="readmeMd"></app-readme-viewer>
+</section>
+
+

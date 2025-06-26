@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --accent: #00bcd4;           /* tweak later */
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+a { color: var(--accent); }
+
