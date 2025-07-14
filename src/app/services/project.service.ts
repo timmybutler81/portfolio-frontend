@@ -17,7 +17,8 @@ export class ProjectService {
   }
 
   getReadme(id: number): Observable<string> {
-  return this.http.get(`http://localhost:8080/api/projects/${id}/readme`,
-                       { responseType: 'text' });
-}
+  return this.http.get(`${environment.apiUrl}/projects/${id}/readme`, {
+    responseType: 'text'
+    });
+  }
 }
