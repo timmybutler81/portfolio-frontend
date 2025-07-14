@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Project } from '../models/project.model';
-import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
-  private apiUrl = `${environment.apiUrl}/projects`;
+  private apiUrl = 'https://portfolio-backend-v1-rees.onrender.com/api';
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +16,7 @@ export class ProjectService {
   }
 
   getReadme(id: number): Observable<string> {
-  return this.http.get(`${environment.apiUrl}/projects/${id}/readme`, {
+  return this.http.get('${environment.apiUrl}/projects/${id}/readme', {
     responseType: 'text'
     });
   }
