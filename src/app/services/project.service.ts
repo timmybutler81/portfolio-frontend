@@ -12,12 +12,13 @@ export class ProjectService {
   constructor(private http: HttpClient) {}
 
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(this.apiUrl);
+    return this.http.get<Project[]>(`${this.apiUrl}/projects`);
   }
 
   getReadme(id: number): Observable<string> {
-  return this.http.get('${environment.apiUrl}/projects/${id}/readme', {
-    responseType: 'text'
+    return this.http.get(`${this.apiUrl}/projects/${id}/readme`, {
+      responseType: 'text'
     });
   }
 }
+
